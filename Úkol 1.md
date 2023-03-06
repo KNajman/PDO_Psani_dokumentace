@@ -32,3 +32,6 @@
  - šroubovák
  - vodováha
  - rudlík
+
+# TODO
+- infografika, nějaká samolepka krabici s automatem o tom jak automat vybali a následně zapojit
