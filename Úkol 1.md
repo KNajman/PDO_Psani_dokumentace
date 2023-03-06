@@ -3,7 +3,7 @@
 ## Zapojení automatu
 Na krabici/obalujících fólií jsou uvedené informace potřebné k aktuálnímu kroku montáže.
 
-![Kávovar - pohled ze zadu](./Kávovar-pohled_ze_zadu.PNG)
+![Kávovar - pohled ze zadu](./Kávovar-pohled_ze_zadu.png)
 
 1. rozebrání krabice (trhni zde)
 2. přívodní napětí 230V
