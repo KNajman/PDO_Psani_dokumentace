@@ -1,9 +1,15 @@
- # Zapojovač kávového automatu
+# Zapojovač kávového automatu
 
 ## Zapojení automatu
-- přívodní napětí 230V
-- přívod vody
-- namontování antény
+Na krabici/obalujících fólií jsou uvedené informace potřebné k aktuálnímu kroku montáže.
+
+![Kávovar - pohled ze zadu](./Kávovar-pohled_ze_zadu.png)
+
+1. rozebrání krabice (trhni zde)
+2. přívodní napětí 230V
+3. přívod vody
+4. namontování antény
+5. první spuštění
 
 ## Tick list pro zapojení kávového automatu
 - [ ] přívodní napětí 230V
@@ -20,7 +26,7 @@
 - [ ] test obsluhy automatu (objednání nápoje, platba, vydání nápoje)
 
 ## Požadaky na zaměstnance
- - paragraf 4
+ - paragraf 4 [vyhlášky](http://atp-elektro.cz/rozdeleni-paragrafu-dle-vyhlasky-501978-sbirka/) 50
  - řidičský průkaz skupiny B
  - fyzická zdatnost pro manipulaci s automatem
 
@@ -35,3 +41,4 @@
 
 # TODO
 - infografika, nějaká samolepka krabici s automatem o tom jak automat vybali a následně zapojit
+
