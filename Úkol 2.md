@@ -1,4 +1,4 @@
-# Zkuste napsat "koncept" otvírák na pivo
+# Otvírák na pivo na 5 způsobů
 
 ## Koncept
 ### Český korunkový otvírák na pivo pozinkovaný
@@ -15,15 +15,28 @@ Otvírák přiložíme hranou k zátce na lahvi. Pohybem ruky přitlačíme otv�
 ![](pracovni_postup.jpg)
 
 ## Reference
-- funkce otevření zátky 
+- funkce otevření korunkové zátky 
+- více informací na stránkách výrobce [https://www.vojenskyprodej.cz/cesky-korunkovy-otvirak-na-pivo-pozinkovany](https://www.vojenskyprodej.cz/cesky-korunkovy-otvirak-na-pivo-pozinkovany)
 
 ## Katalogový list
 ![https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vojenskyprodej.cz%2Fcesky-korunkovy-otvirak-na-pivo-pozinkovany&psig=AOvVaw0SrZxHNRxdcpqlj6dGSA3K&ust=1678263280053000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLiqqoewyf0CFQAAAAAdAAAAABAE](otvirak_piva.jpg)
 
 ### Český korunkový otvírák na pivo pozinkovaný
-- Materiál: ocelový plech typu 1.4301
-- Tloušťka plechu: 1,5 mm
-- Rozměry: 8,5 x 4,5 x 1,5 cm
+
+|   |   |
+|---|---|
+|  Materiál | ocelový plech typu 1.4301  |
+| Tloušťka plechu:  |  1,5 mm |
+|Rozměry: | 8,5 x 4,5 x 1,5 cm |
+| Váha: |  0,05 kg |
+| Barva: |  stříbná |
+| Výrobce: |  Otvíráky s. r. o. |
+| Země původu: |  Česká republika |
+| Výrobek je vhodný pro: |  kuchyně, restaurace, hospody, pivnice, kavárny, bary nebo jen tak do kapsy (nedoporučujeme nosit v kapse s předměty kterým hrozí mechanické poškození - škrábance, vrypy,...) |
+| Výrobek nevystavujte extrémním teplotám: |  -20°C - 40°C |
+| Výrobek nevystavujte extrémní vlhkosti: |  0 - 90% |
+
+
 
 ## Turiál
 Jak otevřít pivo?
