@@ -20,4 +20,31 @@
 
 # Dokumentace
 
+## 1. Stažení instalace a nastavení prostředí pro kompilaci a testování
+
+### 1.1 Stažení
+
+### 1.2 Instalace
+
+### 1.3 Nastavení prostředí
+
+## 2. Připojení, nastavení HW
+
+### 2.1 Připojení
+
+### 2.2 Nastavení
+
+## 3 Testování
+
+### 3.1 Testovácí scénáře
+
+### 3.2 Testovací kódy
+
+### 3.3 Testování
+
+### 3.4 Výsledky testování
+
+
+
+
 autor: @KNajman
