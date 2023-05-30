@@ -87,11 +87,12 @@ Po připojení desky k PC a zjištění COM portu, můžeme spustit PuTTY a nast
 ### 2.2 Nastavení projektu
 Nyní můžeme otevřít vývojovové prostředí Vitis a otevřít existující projekt se samotným řešením. Najdeme tedy místo kde máme uloženou složku *testip\vitis* a spustíme
 ![Vitis 1](./img/vitis_1.png)
-Otevře se nám soubor main, zde je implementace kódu enkodéru do JPEG v jazyku C a také připravené volání funkce pro testování řešení vytvořeného na desce.
+Otevře se nám vývojové prostředí a něm soubor main, zde je implementace kódu enkodéru do JPEG v jazyku C a také připravené volání funkce pro testování řešení vytvořeného na desce ZedBoard. Tím je nastavení hotové a můžeme přejít k samotnému testování. Otevřené vývojové prostředí by mělo vypadat následovně:
+![Vitis 2](./img/vitis_2.png)
 
 ## 3 Testování
 
-### 3.1 Testovácí scénáře
+### 3.1 Testovácí data
 Pro testování byl vybrán příklad z wikipedie [JPEG](https://en.wikipedia.org/wiki/JPEG) a to konkrétně vstupní matice 8x8 pixelů vybraná z obrázku [Lenna](https://en.wikipedia.org/wiki/Lenna). Vybraný makroblok vstupních dat je následující:
 ```
 [52, 55, 61, 66, 70, 61, 64, 73]
@@ -114,18 +115,18 @@ odkud se po kompresi získá následující výstupní matice:
 [ 0, 0, 0, 0, 0, 0, 0, 0]
 [ 0, 0, 0, 0, 0, 0, 0, 0]
 ```
-Po RLE by výstupní komprese měla vypadat následovně(graficky zobrazená pro naše účely):
+Po RLE by výstupní komprese měla vypadat následovně (graficky zobrazená pro naše účely):
 ```
-(0,5)(-26);(0,2)(-3);(1,2)(-3);(0,2)(-2);(0,3)(-6);(0,2)(2);(0,3)(-4);(0,1)(1);(0,2)(-3);(0,1)(1);(0,1)(1);(0,3)(5);(0,1)(1);(0,2)(2);(0,1)(-1);(0,1)(1);(0,1)(-1);(0,2)(2);(5,1)(-1);(0,1)(-1);
+(0,5)(-26);(0,2)(-3);(1,2)(-3);(0,2)(-2);(0,3)(-6);(0,2)(2);(0,3)(-4);(0,1)(1);(0,2)(-3);(0,1)(1);(0,1)(1);(0,3)(5);(0,1)(1);(0,2)(2);(0,1)(-1);(0,1)(1);(0,1)(-1);(0,2)(2);(5,1)(-1);(0,1)(-1);(0,0)(0);
 ```
 
 ### 3.2 Testování
-Kód pro testování je v souboru *main.c* pro spuštění testu je nutné celý projekt postavit, vytvořit tak potřebné soubory a k nahrání na desku. To lze udělat klávesovou zkratkou *Ctrl + B* nebo v menu *Project* vybrat *Build Project*. Po úspěšném postavení projektu se nám v terminálu objeví výpis "Build Finished" (pokud by došlo k chybě, okamžitě me kontaktuje)
+Kód pro testování je v souboru *main.c* pro spuštění testu je nutné celý projekt postavit, vytvořit tak potřebné soubory a k nahrání na desku. To lze udělat klávesovou zkratkou **Ctrl + B** nebo v menu *Project* vybrat *Build Project*. Po úspěšném postavení projektu se nám v terminálu objeví výpis "Build Finished" (pokud by došlo k chybě, okamžitě me kontaktuje)
 
-Můžeme proto přistoupit k nahrání souboru na desku. To provedeme klávesovou zkratkou *Ctrl + F5* nebo v menu *Run* vybrat *Run As* a poté *Launch on Hardware (System Debugger)*. Po úspěšném nahrání souboru se nám v terminálu objeví výpis "Program downloaded to FPGA" (pokud by došlo k chybě, okamžitě me kontaktuje)
+Můžeme proto přistoupit k nahrání souboru na desku. To provedeme klávesovou zkratkou **Ctrl + F5** nebo v menu *Run* vybrat *Run As* a poté *Launch on Hardware (System Debugger)*. Po úspěšném nahrání souboru se nám v terminálu objeví výpis "Program downloaded to FPGA" (pokud by došlo k chybě, okamžitě me kontaktuje)
 
 ### 3.3 Výsledky testování
-Tím jsme spustili testy a jejich výsledek můžeme vidět v Putty termilálu. Výsledek testu je následující:
+Tím jsme spustili testy a jejich výsledek můžeme vidět v Putty terminálu. Výsledek testu je následující:
 ```
 Test 1:
 JPEGenc test application
@@ -174,17 +175,21 @@ RLE:
    
    (0,5)(-26);(0,2)(-3);(1,2)(-3);(0,2)(-2);(0,3)(-6);(0,2)(2);(0,3)(-4);(0,1)(1);(0,2)(-3);(0,1)(1);(0,1)(1);(0,3)(5);(0,1)(1);(0,2)(2);(0,1)(-1);(0,1)(1);(0,1)(-1);(0,2)(2);(5,1)(-1);(0,1)(-1);
 
-RLE done in 0.000012 seconds
-
+RLE done in 0.012 ms
 Test 2:
 
 Speed test. Random Image 1024*8 repeated 96 times
 
 Image done in 1568744 total. Setup done in average 525 ticks, run in average 15815 ticks
+
+RLE done in 1.14 ms
 ```
+V prvím testu jsou porovnány výsledky výstupu z desky a kódovým řešením v C, že se výsledky schoduji či nikoliv nám oznámí výpis **DATA_VALID** taktéž můžeme porovnat graficky výsledek s referenčním výstupem a zjistit, že se nám výstupní matice shoduje.
 
-Výsledky jsou porovnány mezi výstupem z desky a kódovým řešením v C, že se výsledky schoduji či nikoliv nám oznámí výpis **DATA_VALID** taktéž můžeme porovnat výsledek s referenčním výstupem a zjistit, že se nám výstupní matice shoduje s referenčním výstupem. Toto porovnání můžeme naléz v souboru "porovnani_metod.mlx" pro MATLAB. 
+V druhý test měří rychlost komprese na větším množství dat. Pro tento test se 96krát vytvoří náhodná matice a měří se počet tiků, které zabere komprese jedné matice a počet tiků, které zabere komprese všech 96 matic. 1 tik odpovídá 3ns, tedy 1ms odpovídá 333 333 tikům. Časové porovnání výsledků je kompxenější téma a je popsáno v kapitole 4.4. Testování mojí bakalářské práce.
 
-Rychlost komprese do RLE je 0.000012 sekund, což je velmi rychlé. Pokud bychom chtěli komprimovat realný obraz, museli bychom upravit kód tak, aby se výstupní matice ukládala sekvenčně do souboru a ne do paměti, to však není předmětem výsledné bakalářské práce. V případě většího množství informací naleznete v kapitole 4.4. Testování mojí bakalářské práce.
+Pokud byhom takto chtěli komprimovat realný obraz, bylo by nutné upravit kód tak, aby se vstup načítal ze vstupních periférii desky a výstup zapisoval na výstupní periférie desky. Což není vůbec snadné a je mimo rozsah této práce.
+
+V případě touhy po větším poznání více informací naleznete v kapitole 4.4. Testování mojí bakalářské práce.
 
 autor: @KNajman
